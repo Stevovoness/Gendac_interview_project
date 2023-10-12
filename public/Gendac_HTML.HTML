@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Gendac Product Management Page</h1>
+
+    <div class="container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <h2>Add Product</h2>
+            <input type="text" id="productName" placeholder="Enter Product Name">
+            <input type="text" id="productCategory" placeholder="Enter Product Category">
+            <input type="text" id="productPrice" placeholder="Enter Product Price">
+            <button id="addProduct">Add Product</button>
+
+            <h2>List of Products</h2>
+            <button id="loadProducts">Load Products</button>
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="productList">
+                    <!-- Products will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <h2>Delete Product</h2>
+            <input type="text" id="productId" placeholder="Enter Product ID">
+            <button id="deleteProduct">Delete Product</button>
+
+            <h2>Update Product</h2>
+            <input type="text" id="updateId" placeholder="Enter Product ID">
+            <div class="radio-group">
+                <label><input type="radio" name="updateField" value="Name"> Name</label>
+                <label><input type="radio" name="updateField" value="Category"> Category</label>
+                <label><input type="radio" name="updateField" value="Price"> Price</label>
+            </div>
+            <input type="text" id="updateValue" placeholder="Enter New Value" style="display:none;">
+            <button id="updateProduct" style="display:none;">Update Product</button>
+            <table id="searchResultTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="searchResultList">
+                    <!-- Searched-for product will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

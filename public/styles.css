@@ -1,0 +1,96 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* This makes the body take up the full viewport height */
+    display: flex;
+    flex-direction: column; /* This stacks the children vertically */
+    align-items: center; /* This centers children horizontally */
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 50px;
+}
+
+button {
+    display: inline-block;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #357abf;
+}
+
+input[type="text"], input[type="radio"] {
+    padding: 8px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: #4285f4;
+    color: white;
+}
+
+h1, h2, input[type="text"], input[type="radio"], button, label {
+    transform-origin: top;
+    transition: transform 0.15s, opacity 0.15s;
+}
+label {
+    display: inline-block;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: start;  /* To make sure content starts at the top */
+    width: 80%;
+    margin: 0 auto;  /* Center the container */
+    gap: 2rem;  /* Adds space between columns */
+}
+
+.left-column, .right-column {
+    flex: 1;  /* Each column takes equal width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Optional: Add some space between each section for clarity */
+h2, button, table, input {
+    margin-bottom: 1rem;
+}
