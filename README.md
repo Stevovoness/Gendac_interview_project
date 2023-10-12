@@ -38,13 +38,13 @@ Prerequisites:
   * Active internet connection (for the external API).
 
 Steps for setting up application:
--Navigate to the project folder in command prompt
--Start the server using 'node server.js'.
--Access via http://localhost:3001 in a browser.
+*Navigate to the project folder in command prompt
+*Start the server using 'node server.js'.
+*Access via http://localhost:3001 in a browser.
 
 Steps for setting up unit tests:
--Navigate to the directory where the project folder is in cmd
--Type "npm test" and run command
+*Navigate to the directory where the project folder is in cmd
+*Type "npm test" and run command
 
 Code Overview:
 --------------
