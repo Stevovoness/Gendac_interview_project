@@ -64,4 +64,4 @@ Notes:
 - The code was set up to be modular, with a seperate backend and front end.
 - The server was set up to handle all API requests, while the front end just handls client interactions with the HTML page. 
 - I have experienced an internal server error which causes the add product functionality to fail. When this happened a server restart fixed the issue.
-- Due to the live updating of the search result in update product, whilst you are typing the ID of the product to update, the console logs an error due to the current ID number in the text box not existing in the database. This is not an issue for the functionality of the code, do not be concerned with the errors in the console.
+- Due to the live updating of the search result in update product, whilst you are typing the ID of the product to update, the console logs an error due to the current ID number in the text box not existing in the database. This is not an issue for the functionality of the code, do not be concerned with the logs in the console. It is just to notify you why the table is not updating.
