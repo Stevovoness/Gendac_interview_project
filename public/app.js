@@ -47,13 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById('deleteProduct').addEventListener('click', function() {
     const productId = document.getElementById('productId').value;
-
-    // Perform validation if needed e.g. check if productId is a number
+    //If the text box is empty
     if (!productId) {
         alert("Please enter a product ID!");
         return;
     }
-
+    //Perform the API delete request
     fetch(`/api/products/${productId}`, {
         method: 'DELETE'
     })
@@ -77,7 +76,7 @@ document.getElementById('addProduct').addEventListener('click', function() {
     const category = document.getElementById('productCategory').value;
     const price = document.getElementById('productPrice').value;
 
-    // Add some basic validation here if needed
+    // If text box is empty
     if (!name || !category || !price) {
         alert("Please fill out all fields!");
         return;
@@ -88,7 +87,7 @@ document.getElementById('addProduct').addEventListener('click', function() {
         Category: category,
         Price: price
     };
-
+    // Perform the post API request
     fetch('/api/products', {
         method: 'POST',
         headers: {
@@ -171,12 +170,13 @@ document.getElementById('updateId').addEventListener('input', async function() {
 document.getElementById('updateProduct').addEventListener('click', async function() {
     const id = document.getElementById('updateId').value;
     const selectedField = document.querySelector('input[name="updateField"]:checked').value;
+    //When the radio button is checked
     const newValue = document.getElementById('updateValue').value;
-
+    //Request the ID's product details from the API
     const response = await fetch(`/api/products/${id}`);
     const product = await response.json();
     product[selectedField] = newValue;  // Update the selected field with new value
-
+    //Perform the PUT API request
     fetch(`/api/products/${id}`, 
     {
         method: 'PUT',
@@ -222,6 +222,7 @@ document.getElementById('updateProduct').addEventListener('click', async functio
         alert(error.message);
     });
 });
+//Scroll animation :)
 document.addEventListener('scroll', function() {
     const elements = document.querySelectorAll('h1, h2, input[type="text"], input[type="radio"], button, label');
     

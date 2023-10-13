@@ -12,7 +12,7 @@ if (require.main === module) {
         console.log(`Server is running on http://localhost:${PORT}`);
     });
 }
-
+//Get request to API
 app.get('/api/products', async (req, res) => {
    try 
 	{
@@ -26,6 +26,7 @@ app.get('/api/products', async (req, res) => {
     	res.status(500).json({ error: 'Failed to fetch products' });
 	}
 	});
+//Delete request to API
 app.delete('/api/products/:id', async (req, res) => {
     try 
 	{
@@ -42,7 +43,7 @@ app.delete('/api/products/:id', async (req, res) => {
         } 
         else if (response.ok) 
         {
-            // Other success statuses (e.g., 200) with potential JSON response
+            
             if (response.headers.has('content-type') && response.headers.get('content-type').includes('application/json')) 
             {
                 const data = await response.json();
@@ -63,31 +64,32 @@ app.delete('/api/products/:id', async (req, res) => {
         res.status(500).json({ error: "Failed to delete product" });
     }
     });
-    app.post('/api/products', async (req, res) => {
-        try {
-            const productData = req.body;
-    
-            const response = await fetch('https://gendacproficiencytest.azurewebsites.net/API/ProductsAPI/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(productData)
-            });
-    
-            // Check for a successful response
-            if (response.ok) {
-                res.json({ message: "Product added successfully!" });
-            } else {
-                const errorText = await response.text();
-                throw new Error(errorText || 'Failed to add product');
-            }
-        } catch (error) {
-            console.error('Error adding product:', error);
-            res.status(500).json({ error: error.message });
-        }
-    });
+//Post request to API
+app.post('/api/products', async (req, res) => {
+    try {
+        const productData = req.body;
 
+        const response = await fetch('https://gendacproficiencytest.azurewebsites.net/API/ProductsAPI/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(productData)
+        });
+
+        // Check for a successful response
+        if (response.ok) {
+            res.json({ message: "Product added successfully!" });
+        } else {
+            const errorText = await response.text();
+            throw new Error(errorText || 'Failed to add product');
+        }
+    } catch (error) {
+        console.error('Error adding product:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+//Get request to API for specific ID
 app.get('/api/products/:id', async (req, res) => 
 {
     try 
@@ -113,7 +115,7 @@ app.get('/api/products/:id', async (req, res) =>
         res.status(500).json({ error: error.message });
     }
 });
-
+//PUT request to API
 app.put('/api/products/:id', async (req, res) => 
 {
     try 
@@ -139,7 +141,6 @@ app.put('/api/products/:id', async (req, res) =>
             } 
             else 
             {
-                // If there's no JSON content, you can send a simple success message
                 res.json({ message: 'Product updated successfully' });
             }
         } 
@@ -154,7 +155,6 @@ app.put('/api/products/:id', async (req, res) =>
     catch (error) 
     {
         console.error('Error updating product:', error);
-        //res.status(500).json({ error: error.message });
     }
 });
 
